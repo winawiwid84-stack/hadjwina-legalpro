@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HADJWINA LEGALPRO - Jasa Konsultasi & Pengurusan Perizinan Resmi</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            DEFAULT: '#0A192F',
+                            dark: '#050D1A',
+                            light: '#172A45',
+                            accent: '#1E3A8A'
+                        },
+                        gold: {
+                            DEFAULT: '#D4AF37',
+                            light: '#F3E5AB',
+                            dark: '#AA8C2C',
+                            hover: '#C5A028'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts Inter & Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Poppins', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-gold selection:text-navy-dark relative">
+
+    <!-- Top Bar -->
+    <div class="bg-navy-dark text-slate-300 text-xs py-2.5 px-4 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+            <div class="flex flex-wrap items-center justify-center sm:justify-start gap-4">
+                <span><i class="fas fa-envelope text-gold mr-1.5"></i> widyactive@gmail.com</span>
+                <span><i class="fas fa-phone-alt text-gold mr-1.5"></i> +62 821-2666-6684</span>
+                <span class="hidden md:inline"><i class="fas fa-map-marker-alt text-gold mr-1.5"></i> Babakan Priangan VII No. 9, Kota Bandung</span>
+            </div>
+            <div class="flex items-center gap-3">
+                <span class="bg-gold/20 text-gold px-2.5 py-0.5 rounded-full font-medium text-[11px] border border-gold/30">
+                    <i class="fas fa-shield-alt mr-1"></i> Legalitas 100% Resmi & Terpercaya
+                </span>
+                <div class="flex gap-2.5">
+                    <a href="https://wa.me/6282126666684" target="_blank" class="hover:text-gold transition"><i class="fab fa-whatsapp text-sm"></i></a>
+                    <a href="mailto:widyactive@gmail.com" class="hover:text-gold transition"><i class="fas fa-envelope text-sm"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <header id="navbar" class="sticky top-0 z-50 bg-navy/95 backdrop-blur-md border-b border-slate-800 shadow-xl transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-gold to-gold-dark flex items-center justify-center shadow-lg text-navy-dark font-bold text-xl transition transform group-hover:scale-105">
+                    <i class="fas fa-balance-scale"></i>
+                </div>
+                <div>
+                    <span class="text-base sm:text-lg font-extrabold tracking-tight text-white block leading-none">HADJWINA</span>
+                    <span class="text-xs font-bold tracking-widest text-gold uppercase mt-1 block">LEGALPRO</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-slate-200">
+                <a href="#hero" class="hover:text-gold transition">Beranda</a>
+                <a href="#tentang" class="hover:text-gold transition">Tentang Kami</a>
+                <a href="#layanan" class="hover:text-gold transition">Layanan</a>
+                <a href="#simulator" class="hover:text-gold transition">Estimasi Biaya & Waktu</a>
+                <a href="#alur" class="hover:text-gold transition">Alur Kerja</a>
+                <a href="#kontak" class="hover:text-gold transition">Kontak</a>
+            </nav>
+
+            <!-- CTA Header Button -->
+            <div class="hidden sm:flex items-center gap-4">
+                <a href="https://wa.me/6282126666684?text=Halo%20Hadjwina%20LegalPro,%20saya%20ingin%20konsultasi%20mengenai%20perizinan." target="_blank" class="bg-gradient-to-r from-gold to-gold-dark text-navy-dark font-semibold px-5 py-2.5 rounded-xl shadow-lg hover:from-gold-hover hover:to-gold transition transform hover:-translate-y-0.5 flex items-center gap-2 text-sm">
+                    <i class="fab fa-whatsapp text-lg"></i> Konsultasi Gratis
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="lg:hidden text-slate-200 hover:text-gold focus:outline-none p-2">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-navy-dark border-b border-slate-800 px-6 py-4 space-y-3">
+            <a href="#hero" class="block text-slate-200 hover:text-gold py-1.5 border-b border-slate-800/60">Beranda</a>
+            <a href="#tentang" class="block text-slate-200 hover:text-gold py-1.5 border-b border-slate-800/60">Tentang Kami</a>
+            <a href="#layanan" class="block text-slate-200 hover:text-gold py-1.5 border-b border-slate-800/60">Layanan</a>
+            <a href="#simulator" class="block text-slate-200 hover:text-gold py-1.5 border-b border-slate-800/60">Estimasi Biaya & Waktu</a>
+            <a href="#alur" class="block text-slate-200 hover:text-gold py-1.5 border-b border-slate-800/60">Alur Kerja</a>
+            <a href="#kontak" class="block text-slate-200 hover:text-gold py-1.5">Kontak</a>
+            <a href="https://wa.me/6282126666684" target="_blank" class="w-full mt-3 bg-gold text-navy-dark font-semibold py-2.5 rounded-xl flex items-center justify-center gap-2 text-sm shadow">
+                <i class="fab fa-whatsapp"></i> Hubungi WhatsApp
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative bg-gradient-to-br from-navy-dark via-navy to-navy-accent text-white py-24 lg:py-32 overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#D4AF37_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="absolute -top-40 -right-40 w-96 h-96 bg-gold/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 bg-gold/10 border border-gold/30 px-3.5 py-1.5 rounded-full text-gold text-xs font-semibold tracking-wide">
+                        <i class="fas fa-award"></i> Kantor Pusat Bandung - Konsultan Perizinan & Legalitas Resmi
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                        HADJWINA LEGALPRO <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold via-gold-light to-gold block mt-2">Solusi Kilat & Legal Perizinan Usaha Anda</span>
+                    </h1>
+                    <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        Melayani pendirian badan usaha, izin bangunan, pembangunan gedung kantor, hotel, restoran, SPBU, SPBE, hingga perpanjangan dokumen secara profesional, transparan, dan terpercaya.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#simulator" class="w-full sm:w-auto bg-gradient-to-r from-gold to-gold-dark text-navy-dark font-bold px-8 py-4 rounded-xl shadow-xl hover:from-gold-hover hover:to-gold transition transform hover:-translate-y-1 text-center flex items-center justify-center gap-2">
+                            <i class="fas fa-calculator text-lg"></i> Cek Estimasi Biaya & Waktu
+                        </a>
+                        <a href="https://wa.me/6282126666684?text=Halo%20Hadjwina%20LegalPro,%20saya%20mau%20konsultasi%20perizinan." target="_blank" class="w-full sm:w-auto bg-slate-800/80 border border-slate-700 text-white font-semibold px-8 py-4 rounded-xl hover:bg-slate-800 transition text-center flex items-center justify-center gap-2">
+                            <i class="fab fa-whatsapp text-gold text-xl"></i> Konsultasi Langsung
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Card / Highlight Box -->
+                <div class="lg:col-span-5">
+                    <div class="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl backdrop-blur-md relative">
+                        <div class="absolute -top-3 -right-3 bg-gold text-navy-dark font-bold text-xs px-3 py-1 rounded-full shadow">
+                            Terverifikasi
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                            <i class="fas fa-file-contract text-gold"></i> Fokus Layanan Utama
+                        </h3>
+                        <ul class="space-y-4 text-sm text-slate-300">
+                            <li class="flex items-start gap-3 bg-slate-800/50 p-3.5 rounded-2xl border border-slate-700/50">
+                                <i class="fas fa-check-circle text-gold mt-1 text-base"></i>
+                                <div>
+                                    <strong class="text-white block font-semibold">Perizinan Usaha & OSS RBA</strong>
+                                    <span class="text-xs text-slate-400">NIB, SIUP, PT/CV, Kemenkumham</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3 bg-slate-800/50 p-3.5 rounded-2xl border border-slate-700/50">
+                                <i class="fas fa-check-circle text-gold mt-1 text-base"></i>
+                                <div>
+                                    <strong class="text-white block font-semibold">Izin Bangunan & PBG Gedung</strong>
+                                    <span class="text-xs text-slate-400">Persetujuan Bangunan Gedung, SLF, KRK</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3 bg-slate-800/50 p-3.5 rounded-2xl border border-slate-700/50">
+                                <i class="fas fa-check-circle text-gold mt-1 text-base"></i>
+                                <div>
+                                    <strong class="text-white block font-semibold">Hotel, Restoran & Komersial</strong>
+                                    <span class="text-xs text-slate-400">Izin Pariwisata, Andalalin, Lingkungan</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3 bg-slate-800/50 p-3.5 rounded-2xl border border-slate-700/50">
+                                <i class="fas fa-check-circle text-gold mt-1 text-base"></i>
+                                <div>
+                                    <strong class="text-white block font-semibold">Izin Khusus SPBU & SPBE</strong>
+                                    <span class="text-xs text-slate-400">Rekomendasi ESDM, Migas & Pertamina</span>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="mt-6 pt-6 border-t border-slate-800 text-center">
+                            <span class="text-xs text-slate-400 block mb-1">Butuh perpanjangan dokumen mendesak?</span>
+                            <span class="text-gold font-bold text-sm"><i class="fas fa-bolt mr-1"></i> Proses Cepat & Pendampingan Penuh</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Stats Bar -->
+    <section class="bg-gold text-navy-dark py-8 shadow-inner">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div class="border-r border-navy-dark/10 last:border-none">
+                    <div class="text-3xl sm:text-4xl font-extrabold font-mono">1,500+</div>
+                    <div class="text-xs sm:text-sm font-semibold mt-1 uppercase tracking-wider">Izin Selesai & Terbit</div>
+                </div>
+                <div class="border-r border-navy-dark/10 last:border-none">
+                    <div class="text-3xl sm:text-4xl font-extrabold font-mono">99.9%</div>
+                    <div class="text-xs sm:text-sm font-semibold mt-1 uppercase tracking-wider">Klien Puas & Sukses</div>
+                </div>
+                <div class="border-r border-navy-dark/10 last:border-none">
+                    <div class="text-3xl sm:text-4xl font-extrabold font-mono">12+</div>
+                    <div class="text-xs sm:text-sm font-semibold mt-1 uppercase tracking-wider">Tahun Pengalaman</div>
+                </div>
+                <div>
+                    <div class="text-3xl sm:text-4xl font-extrabold font-mono">100%</div>
+                    <div class="text-xs sm:text-sm font-semibold mt-1 uppercase tracking-wider">Legalitas Resmi</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="tentang" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-6 space-y-6">
+                    <span class="text-gold font-semibold tracking-wider uppercase text-xs bg-gold/10 px-3 py-1 rounded-full border border-gold/20">Tentang Hadjwina Legalpro</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-navy leading-tight">Mitra Terpercaya Pengurusan Legalitas & Perizinan Usaha Anda</h2>
+                    <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                        <strong>HADJWINA LEGALPRO</strong> hadir sebagai biro konsultan hukum dan perizinan berbadan resmi yang berkedudukan di Kota Bandung. Kami berdedikasi membantu para pengusaha, korporasi, developer, dan investor dalam menavigasi regulasi birokrasi perizinan di Indonesia secara cepat, transparan, dan sesuai hukum yang berlaku.
+                    </p>
+                    <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                        Mulai dari pendirian badan usaha kecil hingga proyek skala besar seperti pembangunan gedung perkantoran, hotel bintang lima, restoran komersial, stasiun pengisian bahan bakar (SPBU/SPBE), hingga perpanjangan berkala dokumen legalitas perusahaan Anda.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 pt-2">
+                        <div class="bg-slate-50 border border-slate-200 p-4 rounded-2xl">
+                            <i class="fas fa-user-shield text-gold text-2xl mb-2"></i>
+                            <h4 class="font-bold text-navy text-sm">Konsultan Bersertifikat</h4>
+                            <p class="text-xs text-slate-500 mt-1">Tim ahli hukum & perizinan berpengalaman bertahun-tahun.</p>
+                        </div>
+                        <div class="bg-slate-50 border border-slate-200 p-4 rounded-2xl">
+                            <i class="fas fa-handshake text-gold text-2xl mb-2"></i>
+                            <h4 class="font-bold text-navy text-sm">Transparan & Tepat</h4>
+                            <p class="text-xs text-slate-500 mt-1">Garansi estimasi waktu dan biaya yang jelas tanpa pungutan liar.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-6">
+                    <div class="bg-gradient-to-br from-navy to-navy-dark text-white p-8 sm:p-10 rounded-3xl shadow-2xl relative overflow-hidden border border-slate-800">
+                        <div class="absolute -bottom-20 -right-20 w-64 h-64 bg-gold/10 rounded-full blur-2xl"></div>
+                        <h3 class="text-2xl font-bold mb-6 text-gold">Kantor Pusat Hadjwina Legalpro</h3>
+                        <div class="space-y-4 text-sm text-slate-300">
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-gold/20 text-gold flex items-center justify-center shrink-0 mt-0.5"><i class="fas fa-map-marker-alt"></i></div>
+                                <div>
+                                    <strong class="block text-white font-semibold">Alamat Lengkap:</strong>
+                                    <span>Babakan Priangan VII No. 9, Kota Bandung, Jawa Barat 40255</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-gold/20 text-gold flex items-center justify-center shrink-0"><i class="fas fa-envelope"></i></div>
+                                <div>
+                                    <strong class="block text-white font-semibold">Email Resmi:</strong>
+                                    <span>widyactive@gmail.com</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-gold/20 text-gold flex items-center justify-center shrink-0"><i class="fas fa-phone-alt"></i></div>
+                                <div>
+                                    <strong class="block text-white font-semibold">Telepon / WhatsApp:</strong>
+                                    <span>+62 821-2666-6684</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 rounded-xl bg-gold/20 text-gold flex items-center justify-center shrink-0"><i class="fas fa-clock"></i></div>
+                                <div>
+                                    <strong class="block text-white font-semibold">Jam Layanan:</strong>
+                                    <span>Senin - Jumat (08:30 - 17:00 WIB)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-8 pt-6 border-t border-slate-700">
+                            <a href="https://wa.me/6282126666684?text=Halo%20Hadjwina%20LegalPro,%20saya%20ingin%20berkunjung%20ke%20kantor%20pusat." target="_blank" class="w-full bg-gold text-navy-dark font-bold py-3.5 rounded-xl text-center block shadow hover:bg-gold-hover transition">
+                                <i class="fab fa-whatsapp mr-2"></i> Jadwalkan Kunjungan / Konsultasi
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="layanan" class="py-20 bg-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold font-semibold tracking-wider uppercase text-xs bg-gold/10 px-3 py-1 rounded-full border border-gold/20">Layanan Profesional Kami</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-navy mt-3">Layanan Perizinan & Pengurusan Komprehensif</h2>
+                <p class="text-slate-600 mt-3 text-base">Kami menyediakan layanan pengurusan izin baru, perubahan, maupun perpanjangan untuk berbagai skala usaha dan sektor industri.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-white border border-slate-200 rounded-3xl p-8 hover:shadow-xl transition duration-300 hover:border-gold group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 bg-navy text-gold rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-gold group-hover:text-navy transition shadow-md">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-navy mb-3">Perizinan Usaha (OSS RBA)</h3>
+                        <p class="text-slate-600 text-sm mb-6 leading-relaxed">
+                            Pengurusan NIB (Nomor Induk Berusaha), SIUP, Akta Pendirian PT/CV, SK Kemenkumham, serta Klasifikasi Baku Lapangan Usaha Indonesia (KBLI) sesuai risiko usaha Anda.
+                        </p>
+                        <div class="space-y-2 mb-6 text-xs text-slate-500 border-t border-slate-100 pt-4">
+                            <div class="flex items-center gap-2"><i class="fas fa-clock text-gold"></i> Estimasi: <strong>3 - 7 Hari Kerja</strong></div>
+                            <div class="flex items-center gap-2"><i class="fas fa-sync-alt text-gold"></i> Layanan: <strong>Baru, Perubahan & Perpanjangan</strong></div>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/6282126666684?text=Halo%20Hadjwina%20LegalPro,%20saya%20tertarik%20mengurus%20Perizinan%20Usaha%20OSS%20RBA." target="_blank" class="w-full bg-navy text-white hover:bg-gold hover:text-navy-dark font-semibold py-3 rounded-xl transition text-center text-sm flex items-center justify-center gap-2 shadow">
+                        <i class="fab fa-whatsapp"></i> Konsultasi Izin Usaha
+                    </a>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-white border border-slate-200 rounded-3xl p-8 hover:shadow-xl transition duration-300 hover:border-gold group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 bg-navy text-gold rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-gold group-hover:text-navy transition shadow-md">
+                            <i class="fas fa-hammer"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-navy mb-3">Izin Bangunan & PBG</h3>
+                        <p class="text-slate-600 text-sm mb-6 leading-relaxed">
+                            Pengurusan Persetujuan Bangunan Gedung (PBG) pengganti IMB lama, Sertifikat Laik Fungsi (SLF), KRK, serta dokumen teknis arsitektur dan struktur bangunan komersial.
+                        </p>
+                        <div class="space-y-2 mb-6 text-xs text-slate-500 border-t border-slate-100 pt-4">
+                            <div class="flex items-center gap-2"><i class="fas fa-clock text-gold"></i> Estimasi: <strong>14 - 30 Hari Kerja</strong></div>
+                            <div class="flex items-center gap-2"><i class="fas fa-sync-alt text-gold"></i> Layanan: <strong>Baru & Perubahan Desain</strong></div>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/6282126666684?text=Halo%20Hadjwina%20LegalPro,%20saya%20tertarik%20mengurus%20Izin%20Bangunan%20dan%20PBG." target="_blank" class="w-full bg-navy text-white hover:bg-gold hover:text-navy-dark font-semibold py-3 rounded-xl transition text-center text-sm flex items-center justify-center gap-2 shadow">
+                        <i class="fab fa-whatsapp"></i> Konsultasi Izin PBG
+                    </a>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-white border border-slate-200 rounded-3xl p-8 hover:shadow-xl transition duration-300 hover:border-gold group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 bg-navy text-gold rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-gold group-hover:text-navy transition shadow-md">
+                            <i class="fas fa-hotel"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-navy mb-3">Gedung Kantor, Hotel & Restoran</h3>
+                        <p class="text-slate-600 text-sm mb-6 leading-relaxed">
+                            Perizinan khusus komersial meliputi izin pariwisata hotel & restoran, izin edar BPOM/Dinkes, Andalalin, surat kelayakan lingkungan (AMDAL/UKL-UPL), dan izin reklame.
+                        </p>
+                        <div class="space-y-2 mb-6 text-xs text-slate-500 border-t border-slate-100 pt-4">
+                            <div class="flex items-center gap-2"><i class="fas fa-clock text-gold"></i> Estimasi: <strong>10 - 25 Hari Kerja</strong></div>
+                            <div class="flex items-center gap-2"><i class="fas fa-sync-alt text-gold"></i> Layanan: <strong>Baru & Perpanjangan</strong></div>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/6282126666684?text=Halo%20Hadjwina%20LegalPro,%20saya%20tertarik%20mengurus%20izin%20Hotel/Restoran/Kantor." target="_blank" class="w-full bg-navy text-white hover:bg-gold hover:text-navy-dark font-semibold py-3 rounded-xl transition text-center text-sm flex items-center justify-center gap-2 shadow">
+                        <i class="fab fa-whatsapp"></i> Konsultasi Komersial
+                    </a>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="bg-white border border-slate-200 rounded-3xl p-8 hover:shadow-xl transition duration-300 hover:border-gold group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 bg-navy text-gold rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-gold group-hover:text-navy transition shadow-md">
+                            <i class="fas fa-gas-pump"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-navy mb-3">Izin Khusus SPBU & SPBE</h3>
+                        <p class="text-slate-600 text-sm mb-6 leading-relaxed">
+                            Pengurusan izin pendirian Stasiun Pengisian Bahan Bakar Umum (SPBU), SPBE (LPG), izin Migas, rekomendasi ESDM, Pertamina, dan kelayakan keselamatan kerja industri.
+                        </p>
+                        <div class="space-y-2 mb-6 text-xs text-slate-500 border-t border-slate-100 pt-4">
+                            <div class="flex items-center gap-2"><i class="fas fa-clock text-gold"></i> Estimasi: <strong>30 - 60 Hari Kerja</strong></div>
+                            <div class="flex items-center gap-2"><i class="fas fa-sync-alt text-gold"></i> Layanan: <strong>Baru & Perpanjangan</strong></div>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/6282126666684?text=Halo%20Hadjwina%20LegalPro,%20saya%20tertarik%20mengurus%20Izin%20SPBU%20atau%20SPBE." target="_blank" class="w-full bg-navy text-white hover:bg-gold hover:text-navy-dark font-semibold py-3 rounded-xl transition text-center text-sm flex items-center justify-center gap-2 shadow">
+                        <i class="fab fa-whatsapp"></i> Konsultasi SPBU/SPBE
+                    </a>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="bg-white border border-slate-200 rounded-3xl p-8 hover:shadow-xl transition duration-300 hover:border-gold group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 bg-navy text-gold rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-gold group-hover:text-navy transition shadow-md">
+                            <i class="fas fa-sync"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-navy mb-3">Perpanjangan Legalitas & Dokumen</h3>
+                        <p class="text-slate-600 text-sm mb-6 leading-relaxed">
+                            Layanan cepat untuk perpanjangan izin yang hampir atau sudah habis masa berlaku: SIUP, TDP, SLF gedung, izin edar, sertifikasi ISO, dan perpajakan badan usaha.
+                        </p>
+                        <div class="space-y-2 mb-6 text-xs text-slate-500 border-t border-slate-100 pt-4">
+                            <div class="flex items-center gap-2"><i class="fas fa-clock text-gold"></i> Estimasi: <strong>3 - 10 Hari Kerja</strong></div>
+                            <div class="flex items-center gap-2"><i class="fas fa-sync-alt text-gold"></i> Layanan: <strong>Perpanjangan Kilat</strong></div>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/6282126666684?text=Halo%20Hadjwina%20LegalPro,%20saya%20mau%20perpanjang%20izin%20usaha." target="_blank" class="w-full bg-navy text-white hover:bg-gold hover:text-navy-dark font-semibold py-3 rounded-xl transition text-center text-sm flex items-center justify-center gap-2 shadow">
+                        <i class="fab fa-whatsapp"></i> Perpanjang Dokumen
+                    </a>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="bg-white border border-slate-200 rounded-3xl p-8 hover:shadow-xl transition duration-300 hover:border-gold group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 bg-navy text-gold rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:bg-gold group-hover:text-navy transition shadow-md">
+                            <i class="fas fa-gavel"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-navy mb-3">Konsultasi Hukum & Pajak Badan</h3>
+                        <p class="text-slate-600 text-sm mb-6 leading-relaxed">
+                            Pendampingan audit legal, sengketa perizinan, penyusunan kontrak kerjasama bisnis, NPWP Badan, pelaporan pajak berkala, dan konsultasi kepatuhan hukum perusahaan.
+                        </p>
+                        <div class="space-y-2 mb-6 text-xs text-slate-500 border-t border-slate-100 pt-4">
+                            <div class="flex items-center gap-2"><i class="fas fa-clock text-gold"></i> Estimasi: <strong>Fleksibel / Sesuai Kebutuhan</strong></div>
+                            <div class="flex items-center gap-2"><i class="fas fa-sync-alt text-gold"></i> Layanan: <strong>Konsultasi & Pendampingan</strong></div>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/6282126666684?text=Halo%20Hadjwina%20LegalPro,%20saya%20ingin%20konsultasi%20hukum%20dan%20pajak%20perusahaan." target="_blank" class="w-full bg-navy text-white hover:bg-gold hover:text-navy-dark font-semibold py-3 rounded-xl transition text-center text-sm flex items-center justify-center gap-2 shadow">
+                        <i class="fab fa-whatsapp"></i> Konsultasi Hukum
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Cost & Time Estimator -->
+    <section id="simulator" class="py-20 bg-slate-900 text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-5 bg-[radial-gradient(#D4AF37_1px,transparent_1px)] [background-size:20px_20px]"></div>
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-gold font-semibold tracking-wider uppercase text-xs bg-gold/10 px-3 py-1 rounded-full border border-gold/30">Simulasi Instan</span>
+                <h2 class="text-3xl sm:text-4xl font-bold mt-3">Kalkulator Estimasi Biaya & Waktu</h2>
+                <p class="text-slate-400 mt-2 text-sm">Pilih jenis perizinan dan keperluan Anda untuk mendapatkan gambaran estimasi waktu proses dan kisaran biaya.</p>
+            </div>
+
+            <div class="bg-slate-800 border border-slate-700 rounded-3xl p-6 sm:p-10 shadow-2xl">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                    <!-- Step 1: Jenis Layanan -->
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-300 mb-2">
+                            <i class="fas fa-layer-group text-gold mr-1"></i> Pilih Kategori Perizinan
+                        </label>
+                        <select id="est-service" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-gold transition">
+                            <option value="usaha">Perizinan Usaha (NIB, PT/CV, OSS RBA)</option>
+                            <option value="pbg">Izin Bangunan & PBG</option>
+                            <option value="komersial">Gedung Kantor, Hotel & Restoran</option>
+                            <option value="spbu">Izin Khusus (SPBU / SPBE / Migas)</option>
+                            <option value="perpanjangan">Perpanjangan Dokumen / Izin</option>
+                        </select>
+                    </div>
+
+                    <!-- Step 2: Jenis Pengurusan -->
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-300 mb-2">
+                            <i class="fas fa-tag text-gold mr-1"></i> Jenis Pengurusan
+                        </label>
+                        <select id="est-type" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-gold transition">
+                            <option value="baru">Pengurusan Baru</option>
+                            <option value="perpanjangan">Perpanjangan / Pembaruan</option>
+                            <option value="perubahan">Perubahan Data / Kepemilikan</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Result Box -->
+                <div class="bg-navy-dark border border-gold/40 rounded-2xl p-6 sm:p-8 mb-8 flex flex-col md:flex-row items-center justify-between gap-6">
+                    <div class="space-y-2 text-center md:text-left">
+                        <span class="text-xs uppercase font-bold tracking-widest text-gold block">Hasil Estimasi Sementara</span>
+                        <h4 id="result-title" class="text-xl font-bold text-white">Perizinan Usaha (NIB & OSS RBA) - Baru</h4>
+                        <p id="result-desc" class="text-xs text-slate-400">Cocok untuk UMKM hingga Perseroan Terbatas skala menengah.</p>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-4 items-center w-full md:w-auto">
+                        <div class="bg-slate-900/80 border border-slate-800 px-5 py-3 rounded-xl text-center min-w-[140px]">
+                            <span class="text-[10px] text-slate-400 block uppercase">Estimasi Waktu</span>
+                            <span id="result-time" class="text-lg font-bold text-gold">3 - 7 Hari Kerja</span>
+                        </div>
+                        <div class="bg-slate-900/80 border border-slate-800 px-5 py-3 rounded-xl text-center min-w-[150px]">
+                            <span class="text-[10px] text-slate-400 block uppercase">Kisaran Biaya</span>
+                            <span id="result-cost" class="text-lg font-bold text-gold">Mulai Rp 1.5 Juta</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA WhatsApp with Dynamic Message -->
+                <div class="text-center">
+                    <button id="btn-whatsapp-estimator" class="w-full sm:w-auto bg-gradient-to-r from-gold to-gold-dark text-navy-dark font-bold px-10 py-4 rounded-xl shadow-xl hover:from-gold-hover hover:to-gold transition transform hover:-translate-y-0.5 inline-flex items-center justify-center gap-3 text-base">
+                        <i class="fab fa-whatsapp text-2xl"></i> Konsultasikan Estimasi Ini via WhatsApp
+                    </button>
+                    <p class="text-[11px] text-slate-400 mt-3">*Estimasi di atas bersifat indikatif. Biaya riil bergantung pada skala proyek, lokasi, dan kelengkapan dokumen.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Step-by-Step Workflow Section -->
+    <section id="alur" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold font-semibold tracking-wider uppercase text-xs bg-gold/10 px-3 py-1 rounded-full border border-gold/20">Alur Kerja Profesional</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-navy mt-3">Prosedur Pengurusan Izin di Hadjwina Legalpro</h2>
+                <p class="text-slate-600 mt-3 text-base">Kami membuat proses perizinan transparan, mudah dipantau, dan bebas dari kerumitan birokrasi.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+                <!-- Step 1 -->
+                <div class="bg-slate-50 border border-slate-200 rounded-3xl p-6 text-center relative group hover:border-gold transition">
+                    <div class="w-12 h-12 bg-gold text-navy-dark rounded-full font-bold flex items-center justify-center text-lg mx-auto mb-4 shadow-md">
+                        01
+                    </div>
+                    <h3 class="font-bold text-navy text-lg mb-2">Konsultasi Awal</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Diskusikan kebutuhan perizinan atau perpanjangan dokumen Anda secara gratis melalui telepon atau WhatsApp.
+                    </p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="bg-slate-50 border border-slate-200 rounded-3xl p-6 text-center relative group hover:border-gold transition">
+                    <div class="w-12 h-12 bg-gold text-navy-dark rounded-full font-bold flex items-center justify-center text-lg mx-auto mb-4 shadow-md">
+                        02
+                    </div>
+                    <h3 class="font-bold text-navy text-lg mb-2">Verifikasi & Analisis</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Tim ahli kami memeriksa dokumen persyaratan dan melakukan analisis regulasi sesuai instansi terkait.
+                    </p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="bg-slate-50 border border-slate-200 rounded-3xl p-6 text-center relative group hover:border-gold transition">
+                    <div class="w-12 h-12 bg-gold text-navy-dark rounded-full font-bold flex items-center justify-center text-lg mx-auto mb-4 shadow-md">
+                        03
+                    </div>
+                    <h3 class="font-bold text-navy text-lg mb-2">Proses & Pengawalan</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Pengajuan dokumen ke OSS, PTSP, Pemda, atau instansi terkait dengan update progres berkala kepada Anda.
+                    </p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="bg-slate-50 border border-slate-200 rounded-3xl p-6 text-center relative group hover:border-gold transition">
+                    <div class="w-12 h-12 bg-gold text-navy-dark rounded-full font-bold flex items-center justify-center text-lg mx-auto mb-4 shadow-md">
+                        04
+                    </div>
+                    <h3 class="font-bold text-navy text-lg mb-2">Izin Terbit & Serah Terima</h3>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Dokumen izin resmi diterbitkan, diserahkan fisik/digital, siap digunakan untuk operasional legal bisnis Anda.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-gold font-semibold tracking-wider uppercase text-xs bg-gold/10 px-3 py-1 rounded-full border border-gold/20">Testimoni Klien</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-navy mt-3">Dipercaya oleh Ratusan Perusahaan & Pengusaha</h2>
+                <p class="text-slate-600 mt-3 text-base">Apa kata klien kami tentang kecepatan, transparansi, dan profesionalisme layanan Hadjwina Legalpro.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white border border-slate-200 p-8 rounded-3xl shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-1 text-gold mb-4">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-slate-700 text-sm italic mb-6 leading-relaxed">
+                            "Pengurusan izin PBG untuk gedung kantor kami selesai tepat waktu tanpa hambatan birokrasi yang rumit. Tim Hadjwina Legalpro sangat komunikatif dan profesional!"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 border-t border-slate-100 pt-4">
+                        <div class="w-10 h-10 rounded-full bg-navy text-gold font-bold flex items-center justify-center text-sm">
+                            BS
+                        </div>
+                        <div>
+                            <strong class="text-navy block text-sm font-semibold">Bpk. Budi Santoso</strong>
+                            <span class="text-xs text-slate-500">Direktur Utama, PT Graha Mandiri</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-white border border-slate-200 p-8 rounded-3xl shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-1 text-gold mb-4">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-slate-700 text-sm italic mb-6 leading-relaxed">
+                            "Sangat terbantu dalam pengurusan izin hotel dan restoran kami. Perpanjangan dokumen operasional juga diurus dengan sangat cepat dan transparan."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 border-t border-slate-100 pt-4">
+                        <div class="w-10 h-10 rounded-full bg-navy text-gold font-bold flex items-center justify-center text-sm">
+                            SL
+                        </div>
+                        <div>
+                            <strong class="text-navy block text-sm font-semibold">Ibu Siska Lestari</strong>
+                            <span class="text-xs text-slate-500">Owner, Grand Panorama Hotel</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-white border border-slate-200 p-8 rounded-3xl shadow-sm flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-1 text-gold mb-4">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-slate-700 text-sm italic mb-6 leading-relaxed">
+                            "Mengurus izin khusus SPBU memang kompleks, tapi Hadjwina Legalpro berhasil mendampingi dari awal rekomendasi ESDM hingga operasional. Luar biasa!"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 border-t border-slate-100 pt-4">
+                        <div class="w-10 h-10 rounded-full bg-navy text-gold font-bold flex items-center justify-center text-sm">
+                            HW
+                        </div>
+                        <div>
+                            <strong class="text-navy block text-sm font-semibold">Bpk. Hendra Wijaya</strong>
+                            <span class="text-xs text-slate-500">Komisaris, PT Energi Nusantara</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Consultation Booking Form Section -->
+    <section id="kontak" class="py-20 bg-gradient-to-br from-navy-dark via-navy to-navy-accent text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-6 space-y-6">
+                    <span class="text-gold font-semibold tracking-wider uppercase text-xs bg-gold/10 px-3 py-1 rounded-full border border-gold/30">Konsultasi Gratis</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold tracking-tight leading-tight">
+                        Jadwalkan Konsultasi Perizinan Anda Hari Ini
+                    </h2>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Punya pertanyaan seputar legalitas usaha, PBG, perpanjangan dokumen, atau izin khusus? Isi formulir di samping atau hubungi tim konsultan kami langsung untuk mendapatkan solusi terbaik.
+                    </p>
+                    <div class="space-y-4 pt-2">
+                        <div class="flex items-start gap-4 text-slate-200">
+                            <div class="w-10 h-10 rounded-xl bg-gold/20 text-gold flex items-center justify-center shrink-0 mt-0.5"><i class="fas fa-map-marker-alt"></i></div>
+                            <div>
+                                <strong class="block text-xs text-slate-400">Kantor Pusat</strong>
+                                <span class="text-sm">Babakan Priangan VII No. 9, Kota Bandung, Jawa Barat 40255</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 text-slate-200">
+                            <div class="w-10 h-10 rounded-xl bg-gold/20 text-gold flex items-center justify-center shrink-0"><i class="fas fa-envelope"></i></div>
+                            <div>
+                                <strong class="block text-xs text-slate-400">Email Resmi</strong>
+                                <span class="text-sm">widyactive@gmail.com</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 text-slate-200">
+                            <div class="w-10 h-10 rounded-xl bg-gold/20 text-gold flex items-center justify-center shrink-0"><i class="fas fa-phone-alt"></i></div>
+                            <div>
+                                <strong class="block text-xs text-slate-400">Layanan WhatsApp / Telepon</strong>
+                                <span class="text-sm">+62 821-2666-6684</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Booking Form Box -->
+                <div class="lg:col-span-6">
+                    <div class="bg-slate-900 border border-slate-800 rounded-3xl p-8 shadow-2xl">
+                        <h3 class="text-xl font-bold text-white mb-6">Formulir Konsultasi Cepat</h3>
+                        <form id="booking-form" class="space-y-4" onsubmit="handleBooking(event)">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1">Nama Lengkap</label>
+                                <input type="text" id="form-nama" required class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-gold transition" placeholder="Masukkan nama Anda">
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 mb-1">Nomor WhatsApp</label>
+                                    <input type="tel" id="form-wa" required class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-gold transition" placeholder="Contoh: 082126666684">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 mb-1">Jenis Perizinan</label>
+                                    <select id="form-layanan" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-gold transition">
+                                        <option value="Perizinan Usaha (OSS)">Perizinan Usaha (OSS RBA)</option>
+                                        <option value="Izin Bangunan / PBG">Izin Bangunan & PBG</option>
+                                        <option value="Hotel / Restoran / Kantor">Gedung Kantor / Hotel / Restoran</option>
+                                        <option value="SPBU / SPBE">Izin Khusus (SPBU / SPBE)</option>
+                                        <option value="Perpanjangan Dokumen">Perpanjangan Dokumen</option>
+                                        <option value="Lainnya">Lainnya / Konsultasi Umum</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1">Pesan / Detail Kebutuhan</label>
+                                <textarea id="form-pesan" rows="3" required class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-gold transition" placeholder="Sebutkan detail usaha atau izin yang ingin diurus..."></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-gradient-to-r from-gold to-gold-dark text-navy-dark font-bold py-3.5 rounded-xl shadow-lg hover:from-gold-hover hover:to-gold transition text-sm flex items-center justify-center gap-2">
+                                <i class="fab fa-whatsapp text-lg"></i> Kirim Permintaan Konsultasi
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/6282126666684?text=Halo%20Hadjwina%20LegalPro,%20saya%20ingin%20konsultasi%20perizinan." target="_blank" class="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition transform hover:scale-110 group" aria-label="Chat WhatsApp">
+        <i class="fab fa-whatsapp text-3xl"></i>
+        <span class="absolute right-full mr-3 bg-white text-slate-800 text-xs font-semibold px-3 py-1.5 rounded-xl shadow-lg opacity-0 group-hover:opacity-100 transition pointer-events-none whitespace-nowrap">
+            Chat WhatsApp
+        </span>
+    </a>
+
+    <!-- Footer -->
+    <footer class="bg-navy-dark text-slate-400 text-xs py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-lg bg-gold flex items-center justify-center text-navy-dark font-bold">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <div>
+                            <span class="text-sm font-bold text-white block leading-none">HADJWINA</span>
+                            <span class="text-[10px] text-gold font-bold uppercase tracking-widest mt-0.5 block">LEGALPRO</span>
+                        </div>
+                    </div>
+                    <p class="text-slate-400 leading-relaxed text-xs">
+                        Mitra terpercaya untuk pengurusan perizinan usaha, PBG, gedung komersial, SPBU/SPBE, dan perpanjangan legalitas perusahaan di seluruh Indonesia.
+                    </p>
+                    <p class="text-xs text-slate-300">
+                        <strong class="text-gold block mb-0.5">Kantor Pusat:</strong>
+                        Babakan Priangan VII No. 9, Kota Bandung, Jawa Barat 40255
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold text-sm mb-4">Layanan Utama</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#layanan" class="hover:text-gold transition">Perizinan Usaha OSS RBA</a></li>
+                        <li><a href="#layanan" class="hover:text-gold transition">Izin Bangunan & PBG</a></li>
+                        <li><a href="#layanan" class="hover:text-gold transition">Gedung Kantor, Hotel & Restoran</a></li>
+                        <li><a href="#layanan" class="hover:text-gold transition">Izin Khusus SPBU & SPBE</a></li>
+                        <li><a href="#layanan" class="hover:text-gold transition">Perpanjangan Dokumen</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold text-sm mb-4">Tautan Cepat</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#hero" class="hover:text-gold transition">Beranda</a></li>
+                        <li><a href="#tentang" class="hover:text-gold transition">Tentang Kami</a></li>
+                        <li><a href="#layanan" class="hover:text-gold transition">Daftar Layanan</a></li>
+                        <li><a href="#simulator" class="hover:text-gold transition">Estimasi Biaya & Waktu</a></li>
+                        <li><a href="#alur" class="hover:text-gold transition">Alur Kerja</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold text-sm mb-4">Jam Operasional</h4>
+                    <p class="text-xs text-slate-400 mb-2">Senin - Jumat: 08:30 - 17:00 WIB</p>
+                    <p class="text-xs text-slate-400 mb-4">Sabtu: 09:00 - 14:00 WIB</p>
+                    <div class="flex gap-3">
+                        <a href="https://wa.me/6282126666684" target="_blank" class="w-8 h-8 rounded-full bg-slate-800 text-gold flex items-center justify-center hover:bg-gold hover:text-navy-dark transition"><i class="fab fa-whatsapp"></i></a>
+                        <a href="mailto:widyactive@gmail.com" class="w-8 h-8 rounded-full bg-slate-800 text-gold flex items-center justify-center hover:bg-gold hover:text-navy-dark transition"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-6 flex flex-col sm:flex-row items-center justify-between text-slate-500 text-[11px]">
+                <p>&copy; 2026 Hadjwina Legalpro. Hak Cipta Dilindungi Undang-Undang.</p>
+                <div class="flex gap-4 mt-4 sm:mt-0">
+                    <a href="#" class="hover:text-gold transition">Kebijakan Privasi</a>
+                    <a href="#" class="hover:text-gold transition">Syarat & Ketentuan</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Interactions -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on click link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Estimator Data & Logic
+        const estService = document.getElementById('est-service');
+        const estType = document.getElementById('est-type');
+        const resultTitle = document.getElementById('result-title');
+        const resultDesc = document.getElementById('result-desc');
+        const resultTime = document.getElementById('result-time');
+        const resultCost = document.getElementById('result-cost');
+        const btnWhatsappEstimator = document.getElementById('btn-whatsapp-estimator');
+
+        const estimatorData = {
+            'usaha': {
+                'baru': { title: 'Perizinan Usaha (NIB & OSS RBA) - Baru', desc: 'Cocok untuk PT/CV baru, pengurusan NIB, SIUP, dan Akta Kemenkumham.', time: '3 - 7 Hari Kerja', cost: 'Mulai Rp 1.5 Juta' },
+                'perpanjangan': { title: 'Perpanjangan Perizinan Usaha', desc: 'Pembaruan masa berlaku dokumen usaha dan pelaporan berkala.', time: '2 - 5 Hari Kerja', cost: 'Mulai Rp 1.0 Juta' },
+                'perubahan': { title: 'Perubahan Data Usaha / Akta', desc: 'Perubahan alamat, penambahan KBLI, atau perubahan pemegang saham.', time: '5 - 10 Hari Kerja', cost: 'Mulai Rp 2.5 Juta' }
+            },
+            'pbg': {
+                'baru': { title: 'Izin Bangunan & PBG - Baru', desc: 'Persetujuan Bangunan Gedung (pengganti IMB) untuk ruko, kantor, atau pabrik.', time: '14 - 30 Hari Kerja', cost: 'Mulai Rp 5.0 Juta' },
+                'perpanjangan': { title: 'Perpanjangan SLF (Sertifikat Laik Fungsi)', desc: 'Pembaruan kelayakan fungsi bangunan gedung komersial.', time: '10 - 20 Hari Kerja', cost: 'Mulai Rp 4.0 Juta' },
+                'perubahan': { title: 'Perubahan Desain / Renovasi Gedung', desc: 'Penyesuaian dokumen PBG akibat perluasan atau renovasi bangunan.', time: '14 - 25 Hari Kerja', cost: 'Mulai Rp 4.5 Juta' }
+            },
+            'komersial': {
+                'baru': { title: 'Izin Gedung Kantor, Hotel & Restoran', desc: 'Pengurusan izin operasional pariwisata, hotel, restoran, dan Andalalin.', time: '10 - 25 Hari Kerja', cost: 'Mulai Rp 3.5 Juta' },
+                'perpanjangan': { title: 'Perpanjangan Izin Hotel & Restoran', desc: 'Pembaruan izin usaha pariwisata, sertifikasi, dan uji kesehatan.', time: '5 - 12 Hari Kerja', cost: 'Mulai Rp 2.0 Juta' },
+                'perubahan': { title: 'Perubahan Klasifikasi / Kepemilikan Hotel', desc: 'Update izin komersial akibat perubahan manajemen atau grade hotel.', time: '7 - 15 Hari Kerja', cost: 'Mulai Rp 3.0 Juta' }
+            },
+            'spbu': {
+                'baru': { title: 'Izin Khusus Pendirian SPBU / SPBE', desc: 'Rekomendasi ESDM, Pertamina, izin lokasi, dan keselamatan kerja.', time: '30 - 60 Hari Kerja', cost: 'Mulai Rp 15 Juta' },
+                'perpanjangan': { title: 'Perpanjangan Izin Operasional SPBU / SPBE', desc: 'Pembaruan izin berkala depot minyak, gas, dan stasiun pengisian.', time: '14 - 30 Hari Kerja', cost: 'Mulai Rp 7.5 Juta' },
+                'perubahan': { title: 'Perubahan Kapasitas / Manajemen SPBU', desc: 'Penyesuaian kapasitas tangki, dispenser, atau kepemilikan SPBU.', time: '20 - 40 Hari Kerja', cost: 'Mulai Rp 10 Juta' }
+            },
+            'perpanjangan': {
+                'baru': { title: 'Pengurusan Dokumen Legalitas Umum', desc: 'Pembuatan dokumen baru pendukung operasional perusahaan.', time: '3 - 7 Hari Kerja', cost: 'Mulai Rp 1.2 Juta' },
+                'perpanjangan': { title: 'Perpanjangan Kilat Dokumen Legalitas', desc: 'Layanan express perpanjangan seluruh jenis izin kedaluwarsa.', time: '2 - 5 Hari Kerja', cost: 'Mulai Rp 1.0 Juta' },
+                'perubahan': { title: 'Perubahan Legalitas & Dokumen Badan Usaha', desc: 'Pembaruan data administratif perusahaan secara menyeluruh.', time: '5 - 10 Hari Kerja', cost: 'Mulai Rp 2.0 Juta' }
+            }
+        };
+
+        function updateEstimator() {
+            const serviceKey = estService.value;
+            const typeKey = estType.value;
+            const data = estimatorData[serviceKey][typeKey];
+
+            resultTitle.textContent = data.title;
+            resultDesc.textContent = data.desc;
+            resultTime.textContent = data.time;
+            resultCost.textContent = data.cost;
+        }
+
+        estService.addEventListener('change', updateEstimator);
+        estType.addEventListener('change', updateEstimator);
+
+        // WhatsApp Estimator Action
+        btnWhatsappEstimator.addEventListener('click', () => {
+            const title = resultTitle.textContent;
+            const time = resultTime.textContent;
+            const cost = resultCost.textContent;
+            const message = `Halo Hadjwina LegalPro, saya ingin konsultasi mengenai layanan *${title}*. Estimasi waktu ${time} dan kisaran biaya ${cost}. Mohon info lebih lanjut.`;
+            window.open(`https://wa.me/6282126666684?text=${encodeURIComponent(message)}`, '_blank');
+        });
+
+        // Booking Form Handler
+        function handleBooking(event) {
+            event.preventDefault();
+            const nama = document.getElementById('form-nama').value;
+            const wa = document.getElementById('form-wa').value;
+            const layanan = document.getElementById('form-layanan').value;
+            const pesan = document.getElementById('form-pesan').value;
+
+            const waMessage = `Halo Hadjwina LegalPro, saya ingin konsultasi perizinan.\n\n*Nama:* ${nama}\n*No. WhatsApp:* ${wa}\n*Layanan:* ${layanan}\n*Pesan:* ${pesan}`;
+            window.open(`https://wa.me/6282126666684?text=${encodeURIComponent(waMessage)}`, '_blank');
+        }
+    </script>
+</body>
+</html>
